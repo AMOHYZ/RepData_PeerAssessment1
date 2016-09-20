@@ -22,7 +22,7 @@ Calculate the total number of steps per day
 ```{r total number, echo=TRUE}
 library(dplyr)
 library(ggplot2)
-Summary <- activity %>% group_by(date)  %>% summarise(steps = sum(steps,na.rm=TRUE))
+histogram1 <- activity %>% group_by(date)  %>% summarise(steps = sum(steps,na.rm=TRUE))
 qplot(date,steps,data=activity,geom ="line")
 ```
 
@@ -59,7 +59,7 @@ names(new_activity)=c("steps","date","interval")
 Calculate the total number of steps taken per day after imputing missing values
 
 ```{r total number 2, echo=TRUE}
-Summary3<- new_activity %>% group_by(date)  %>% summarise(steps = sum(steps))
+histogram2<- new_activity %>% group_by(date)  %>% summarise(steps = sum(steps))
 qplot(date,steps,data=new_activity,geom ="line")
 ```
 
